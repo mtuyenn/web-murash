@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="styles/main.css?v=3" type="text/css"/>
 </head>
 <body>
-    <img src="assets/image.png" alt="Murach Logo" width="300" height="200">
+    <img src="assets/image.png" alt="Murach Logo" width="200" height="200">
     <h1>Survey</h1>
     <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
 
     <h2>Your Information</h2>
-    <form action="emailList" method="post">
+    <form action="survey" method="post">
         <input type="hidden" name="action" value="add">
         <label>Email:</label>
         <input type="email" name="email" required><br>
@@ -36,7 +36,7 @@
         <input type="checkbox" name="emailOK" value="Yes"> Yes, please send me email announcements<br><br>
 
         <label>Please contact me by:</label>
-        <select name="contactBy">
+        <select name="contactBy" multiple size="3">
             <option value="Email or postal mail">Email or postal mail</option>
             <option value="Email only">Email only</option>
             <option value="Postal mail only">Postal mail only</option>

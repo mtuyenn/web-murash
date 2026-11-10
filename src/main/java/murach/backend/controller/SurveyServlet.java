@@ -9,10 +9,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import murach.backend.dao.UserDB;
+import murach.backend.entity.Survey;
 import murach.backend.entity.User;
 
-@WebServlet("/emailList")
-public class EmailListServlet extends HttpServlet {
+@WebServlet("/survey")
+public class SurveyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
@@ -40,18 +41,20 @@ public class EmailListServlet extends HttpServlet {
                     dateOfBirth = null;
                 }
             }
+            User user = new User(firstName, lastName, email, dateOfBirth);
 
+            // lấy thông tin survey từ request
             String heardFrom = request.getParameter("heardFrom");
             boolean wantsUpdates = request.getParameter("wantsUpdates") != null;
             boolean emailOK = request.getParameter("emailOK") != null;
 
             String[] contactByValues = request.getParameterValues("contactBy");
             String contactBy = (contactByValues != null) ? String.join(", ", contactByValues) : "";
+            Survey survey = new Survey(user, heardFrom, wantsUpdates, emailOK, contactBy);
 
-            User user = new User(firstName, lastName, email, dateOfBirth, heardFrom, wantsUpdates, emailOK, contactBy);
-            UserDB.insert(user);
+            UserDB.insert(survey);
 
-            request.setAttribute("user", user);
+            request.setAttribute("survey", survey);
             url = "/thanks.jsp";
         }
 

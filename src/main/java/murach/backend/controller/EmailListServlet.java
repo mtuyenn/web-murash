@@ -34,7 +34,8 @@ public class EmailListServlet extends HttpServlet {
             String heardFrom = request.getParameter("heardFrom");
             boolean wantsUpdates = request.getParameter("wantsUpdates") != null;
             boolean emailOK = request.getParameter("emailOK") != null;
-            String contactBy = request.getParameter("contactBy");
+            String[] contactByValues = request.getParameterValues("contactBy");
+            String contactBy = (contactByValues != null) ? String.join(", ", contactByValues) : "";
 
             User user = new User(firstName, lastName, email, dateOfBirth, heardFrom, wantsUpdates, emailOK, contactBy);
             UserDB.insert(user);

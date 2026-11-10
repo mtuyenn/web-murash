@@ -43,6 +43,7 @@ public class SurveyServlet extends HttpServlet {
             }
             User user = new User(firstName, lastName, email, dateOfBirth);
 
+            // lấy thông tin survey từ request
             String heardFrom = request.getParameter("heardFrom");
             boolean wantsUpdates = request.getParameter("wantsUpdates") != null;
             boolean emailOK = request.getParameter("emailOK") != null;

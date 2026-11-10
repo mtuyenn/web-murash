@@ -3,18 +3,18 @@ package murach.backend.entity;
 import java.io.Serializable;
 
 public class Survey implements Serializable {
+    private User user;
     private String heardFrom;
     private boolean wantsUpdates;
     private boolean emailOK;
     private String contactBy;
-    private User user;
 
     public Survey() {
+        this.user = null;
         this.heardFrom = "";
         this.wantsUpdates = false;
         this.emailOK = false;
         this.contactBy = "";
-        this.user = null;
     }
 
     public Survey(User user, String heardFrom, boolean wantsUpdates, boolean emailOK, String contactBy) {
@@ -23,6 +23,14 @@ public class Survey implements Serializable {
         this.wantsUpdates = wantsUpdates;
         this.emailOK = emailOK;
         this.contactBy = contactBy;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getHeardFrom() {

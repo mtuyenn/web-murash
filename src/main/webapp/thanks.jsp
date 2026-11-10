@@ -7,29 +7,37 @@
     <link rel="stylesheet" href="styles/main.css" type="text/css"/>
 </head>
 <body>
-    <h1>Thanks for joining our email list</h1>
+    <h1>Thanks for taking our survey</h1>
     <p>Here is the information that you entered:</p>
+
     <label>Email:</label>
-    <span>${user.email}</span><br>
+    <span>${survey.user.email}</span><br>
+
     <label>First Name:</label>
-    <span>${user.firstName}</span><br>
+    <span>${survey.user.firstName}</span><br>
+
     <label>Last Name:</label>
-    <span>${user.lastName}</span><br>
+    <span>${survey.user.lastName}</span><br>
+
     <label>Date of Birth:</label>
-    <span>${user.dateOfBirth}</span><br>
+    <span>${survey.user.dateOfBirth}</span><br>
+
     <label>Heard From:</label>
-    <span>${user.heardFrom}</span><br>
+    <span>${survey.heardFrom}</span><br>
+
     <label>Wants Updates:</label>
-    <span>${user.wantsUpdates ? "Yes" : "No"}</span><br>
+    <span>${survey.wantsUpdates ? "Yes, I'd like that" : "No"}</span><br>
+
     <label>Email OK:</label>
-    <span>${user.emailOK ? "Yes" : "No"}</span><br>
+    <span>${survey.emailOK ? "Yes, please send me email announcements" : "No"}</span><br>
+
     <label>Contact By:</label>
-    <span>${user.contactBy}</span><br>
-    <p>To enter another email address, click on the Back button in your browser or the Return button shown below.</p>
-    <form action="emailList" method="get">
+    <span>${survey.contactBy}</span><br>
+
+    <p>To enter another survey, click on the Back button in your browser or the Return button shown below.</p>
+    <form action="survey" method="get">
         <input type="hidden" name="action" value="join">
         <input type="submit" value="Return">
     </form>
 </body>
 </html>
-

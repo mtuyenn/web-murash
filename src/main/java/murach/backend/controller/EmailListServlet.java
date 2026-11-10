@@ -30,8 +30,13 @@ public class EmailListServlet extends HttpServlet {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
+            String dateOfBirth = request.getParameter("dateOfBirth");
+            String heardFrom = request.getParameter("heardFrom");
+            boolean wantsUpdates = request.getParameter("wantsUpdates") != null;
+            boolean emailOK = request.getParameter("emailOK") != null;
+            String contactBy = request.getParameter("contactBy");
 
-            User user = new User(firstName, lastName, email);
+            User user = new User(firstName, lastName, email, dateOfBirth, heardFrom, wantsUpdates, emailOK, contactBy);
             UserDB.insert(user);
 
             request.setAttribute("user", user);

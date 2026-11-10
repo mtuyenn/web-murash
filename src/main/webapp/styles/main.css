@@ -5,17 +5,17 @@ body {
     margin-right: 2em;
 }
 
-h1 {
+h1, h2 {
     color: teal;
 }
 
 label {
     float: left;
-    width: 6em;
+    width: 11em;
     margin-bottom: 0.5em;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], select {
     width: 15em;
     margin-left: 0.5em;
     margin-bottom: 0.5em;
@@ -26,6 +26,8 @@ br {
 }
 
 #submit {
-    margin-left: 0.5em;
+    margin-top: 1em;
+
+    padding: 0.5em 1em;
 }
 

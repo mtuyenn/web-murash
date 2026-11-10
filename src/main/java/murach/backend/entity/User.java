@@ -6,17 +6,33 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
+    private String dateOfBirth;
+    private String heardFrom;
+    private boolean wantsUpdates;
+    private boolean emailOK;
+    private String contactBy;
 
     public User() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
+        this.dateOfBirth = "";
+        this.heardFrom = "";
+        this.wantsUpdates = false;
+        this.emailOK = false;
+        this.contactBy = "";
     }
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email, String dateOfBirth, 
+        String heardFrom, boolean wantsUpdates, boolean emailOK, String contactBy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.heardFrom = heardFrom;
+        this.wantsUpdates = wantsUpdates;
+        this.emailOK = emailOK;
+        this.contactBy = contactBy;
     }
 
     public String getFirstName() {
@@ -41,5 +57,45 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getHeardFrom() {
+        return heardFrom;
+    }
+
+    public void setHeardFrom(String heardFrom) {
+        this.heardFrom = heardFrom;
+    }
+
+    public boolean isWantsUpdates() {
+        return wantsUpdates;
+    }
+
+    public void setWantsUpdates(boolean wantsUpdates) {
+        this.wantsUpdates = wantsUpdates;
+    }
+
+    public boolean isEmailOK() {
+        return emailOK;
+    }
+
+    public void setEmailOK(boolean emailOK) {
+        this.emailOK = emailOK;
+    }
+
+    public String getContactBy() {
+        return contactBy;
+    }
+
+    public void setContactBy(String contactBy) {
+        this.contactBy = contactBy;
     }
 }

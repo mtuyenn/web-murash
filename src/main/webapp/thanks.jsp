@@ -15,6 +15,16 @@
     <span>${user.firstName}</span><br>
     <label>Last Name:</label>
     <span>${user.lastName}</span><br>
+    <label>Date of Birth:</label>
+    <span>${user.dateOfBirth}</span><br>
+    <label>Heard From:</label>
+    <span>${user.heardFrom}</span><br>
+    <label>Wants Updates:</label>
+    <span>${user.wantsUpdates ? "Yes" : "No"}</span><br>
+    <label>Email OK:</label>
+    <span>${user.emailOK ? "Yes" : "No"}</span><br>
+    <label>Contact By:</label>
+    <span>${user.contactBy}</span><br>
     <p>To enter another email address, click on the Back button in your browser or the Return button shown below.</p>
     <form action="emailList" method="get">
         <input type="hidden" name="action" value="join">

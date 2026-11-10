@@ -11,7 +11,7 @@ h1, h2 {
 
 label {
     float: left;
-    width: 11em;
+    width: 13em;
     margin-bottom: 0.5em;
 }
 
@@ -26,8 +26,7 @@ br {
 }
 
 #submit {
-    margin-top: 1em;
-    margin-left: 0.5em; 
-    padding: 0.5em 1em;
+    margin-top: 1.5em;
+    padding: 0.4em 1.2em;
+    cursor: pointer;
 }
-

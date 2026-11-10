@@ -1,6 +1,7 @@
 package murach.backend.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,10 +31,20 @@ public class EmailListServlet extends HttpServlet {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
-            String dateOfBirth = request.getParameter("dateOfBirth");
+            String dobString = request.getParameter("dateOfBirth");
+            LocalDate dateOfBirth = null;
+            if (dobString != null && !dobString.trim().isEmpty()) {
+                try {
+                    dateOfBirth = LocalDate.parse(dobString);
+                } catch (Exception e) {
+                    dateOfBirth = null;
+                }
+            }
+
             String heardFrom = request.getParameter("heardFrom");
             boolean wantsUpdates = request.getParameter("wantsUpdates") != null;
             boolean emailOK = request.getParameter("emailOK") != null;
+
             String[] contactByValues = request.getParameterValues("contactBy");
             String contactBy = (contactByValues != null) ? String.join(", ", contactByValues) : "";
 

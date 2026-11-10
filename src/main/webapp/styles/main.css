@@ -15,7 +15,7 @@ label {
     margin-bottom: 0.5em;
 }
 
-input[type="text"], input[type="email"], select {
+input[type="text"], input[type="email"], input[type="date"], select {
     width: 15em;
     margin-left: 0.5em;
     margin-bottom: 0.5em;

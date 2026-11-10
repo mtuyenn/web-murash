@@ -1,12 +1,13 @@
 package murach.backend.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String heardFrom;
     private boolean wantsUpdates;
     private boolean emailOK;
@@ -16,15 +17,15 @@ public class User implements Serializable {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
-        this.dateOfBirth = "";
+        this.dateOfBirth = null;
         this.heardFrom = "";
         this.wantsUpdates = false;
         this.emailOK = false;
         this.contactBy = "";
     }
 
-    public User(String firstName, String lastName, String email, String dateOfBirth, 
-        String heardFrom, boolean wantsUpdates, boolean emailOK, String contactBy) {
+    public User(String firstName, String lastName, String email, LocalDate dateOfBirth, 
+                String heardFrom, boolean wantsUpdates, boolean emailOK, String contactBy) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -59,11 +60,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
